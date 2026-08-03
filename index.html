@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>WorkBuddy 个人效率工作台 · Hello Kitty</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- 背景装饰暗纹 -->
+  <div class="bg-deco" aria-hidden="true">
+    <span class="deco bow d1"></span>
+    <span class="deco star d2"></span>
+    <span class="deco star d3"></span>
+    <span class="deco bow d4"></span>
+    <span class="deco star d5"></span>
+    <span class="deco bow d6"></span>
+  </div>
+
+  <!-- 顶部状态栏 -->
+  <header class="topbar">
+    <div class="topbar-left">
+      <div class="brand">
+        <span id="brandKitty" class="brand-kitty"></span>
+        <span class="brand-name">WorkBuddy<small>效率工作台</small></span>
+      </div>
+      <div class="status-pills">
+        <span class="pill" id="datePill">--</span>
+        <span class="pill" id="weekPill">--</span>
+        <span class="pill weather" id="weatherPill">
+          <span class="weather-ico" id="weatherIco"></span>
+          <span id="weatherText">加载中…</span>
+        </span>
+      </div>
+    </div>
+    <div class="topbar-right">
+      <span class="save-flag" id="saveFlag"></span>
+      <button class="icon-btn" id="settingsBtn" title="数据备份与设置">⚙</button>
+      <div class="search-wrap">
+        <input id="globalSearch" type="text" placeholder="搜索所有板块…" autocomplete="off" />
+        <button id="searchBtn" title="搜索">搜</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- 主体 -->
+  <div class="layout">
+    <!-- 左侧导航 -->
+    <nav class="sidebar" id="sidebar"></nav>
+
+    <!-- 右侧内容 -->
+    <main class="content" id="content"></main>
+  </div>
+
+  <!-- 右下角悬浮新增按钮 -->
+  <button class="fab" id="fab" title="新增">+</button>
+
+  <!-- 通用弹窗 -->
+  <div class="modal-mask" id="modalMask" hidden>
+    <div class="modal" id="modal">
+      <div class="modal-head">
+        <span id="modalTitle">标题</span>
+        <button class="modal-close" id="modalClose">×</button>
+      </div>
+      <div class="modal-body" id="modalBody"></div>
+      <div class="modal-foot" id="modalFoot"></div>
+    </div>
+  </div>
+
+  <!-- 提醒通知容器 -->
+  <div class="toast-wrap" id="toastWrap"></div>
+  <!-- 全完成动画层 -->
+  <div class="lucky-layer" id="luckyLayer" hidden></div>
+
+  <script src="app.js"></script>
+</body>
+</html>
